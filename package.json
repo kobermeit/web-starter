@@ -1,0 +1,50 @@
+{
+  "name": "web-starter",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "imports": {
+    "#client/*": "./src/client/*",
+    "#server/*": "./src/server/*",
+    "#shared/*": "./src/shared/*"
+  },
+  "scripts": {
+    "dev": "docker compose up -d db && (npm run dev:server & npm run dev:client & wait)",
+    "dev:server": "node --env-file-if-exists=.env --watch src/server/index.ts",
+    "dev:client": "vite",
+    "build": "vite build",
+    "typecheck": "tsc -p tsconfig.client.json && tsc -p tsconfig.server.json",
+    "verify": "npm run typecheck && npm run build",
+    "db:generate": "drizzle-kit generate"
+  },
+  "dependencies": {
+    "@fastify/static": "10.1.7",
+    "drizzle-orm": "0.45.4",
+    "fastify": "5.12.7",
+    "postgres": "3.4.9"
+  },
+  "devDependencies": {
+    "@base-ui/react": "1.9.0",
+    "@tailwindcss/vite": "4.3.3",
+    "@tanstack/query-async-storage-persister": "5.105.0",
+    "@tanstack/react-query": "5.105.0",
+    "@tanstack/react-query-persist-client": "5.105.0",
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "class-variance-authority": "0.7.1",
+    "cn": "0.5.0",
+    "drizzle-kit": "0.31.11",
+    "lucide-react": "1.61.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-router": "8.5.0",
+    "tailwindcss": "4.3.3",
+    "tw-animate-css": "1.4.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.5"
+  }
+}
