@@ -16,7 +16,7 @@ export function TodosPage() {
 
   return (
     <>
-      <h1 className="mb-4 text-2xl font-semibold">Todos</h1>
+      <h1 className="mb-4 text-2xl font-semibold">Todos YEAH BOI</h1>
       <form action={addTodo} className="mb-4 flex gap-2">
         <Input name="title" placeholder="Add a todo" aria-label="New todo" autoComplete="off" />
         <Button type="submit">Add</Button>
