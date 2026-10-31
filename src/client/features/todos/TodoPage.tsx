@@ -13,7 +13,7 @@ export function TodoPage() {
     <>
       <Link to="/" className={buttonVariants({ variant: "ghost", size: "sm", className: "mb-4" })}>
         <ArrowLeftIcon />
-        All todos
+        All todos COOL
       </Link>
       <QueryBoundary query={query}>
         {(todo) => (
